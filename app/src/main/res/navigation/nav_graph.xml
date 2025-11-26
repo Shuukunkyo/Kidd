@@ -19,13 +19,13 @@
         <fragment
             android:id="@+id/campaignFragment"
             android:name="udemy.android.kidd.view.CampaignFragment"
-            android:label="ポイント"
-            tools:layout="@layout/fragment_points" />
+            android:label="キャンペーン"
+            tools:layout="@layout/fragment_campaign" />
 
         <fragment
             android:id="@+id/pointsFragment"
             android:name="udemy.android.kidd.view.PointsFragment"
-            android:label="カード"
+            android:label="ポイント"
             tools:layout="@layout/fragment_points" />
 
         <fragment
@@ -33,5 +33,6 @@
             android:name="udemy.android.kidd.view.UsageFragment"
             android:label="設定"
             tools:layout="@layout/fragment_menu" />
+        
 
 </navigation>

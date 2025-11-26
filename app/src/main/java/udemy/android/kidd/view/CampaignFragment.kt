@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import udemy.android.kidd.R
 import udemy.android.kidd.databinding.FragmentCampaignBinding
+import udemy.android.kidd.databinding.FragmentHomeBinding
 
 class CampaignFragment : Fragment(){
     private var _binding: FragmentCampaignBinding?=null
@@ -15,6 +16,7 @@ class CampaignFragment : Fragment(){
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = FragmentCampaignBinding.inflate(inflater, container, false)
         return binding.root
     }
 

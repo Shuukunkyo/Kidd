@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import udemy.android.kidd.databinding.FragmentMenuBinding
-import udemy.android.kidd.databinding.FragmentPointsBinding
 
 class MenuFragment : Fragment(){
     private var _binding: FragmentMenuBinding?=null

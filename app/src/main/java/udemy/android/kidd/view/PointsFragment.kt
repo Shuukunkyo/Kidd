@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import udemy.android.kidd.databinding.FragmentHomeBinding
 import udemy.android.kidd.databinding.FragmentPointsBinding
 
 class PointsFragment : Fragment(){
@@ -14,6 +15,7 @@ class PointsFragment : Fragment(){
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = FragmentPointsBinding.inflate(inflater, container, false)
         return binding.root
     }
 

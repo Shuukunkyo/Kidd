@@ -1,6 +1,7 @@
 package udemy.android.kidd
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -23,14 +24,41 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // 1. 初始化 View Binding
+        //    MainActivity 加载 activity_main.xml
         binding = ActivityMainBinding.inflate(layoutInflater)
         // 设置 Activity 的内容视图
         setContentView(binding.root)
 
+        //  FragmentContainerView 设置为 NavHostFragment
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_container) as NavHostFragment
         val navController = navHostFragment.navController
 
-        binding.bottomNavView.setupWithNavController(navController)
+        // BottomNavigationView 加载 bottom_nav_menu.xml
+        binding.bottomNavView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.homeFragment -> {
+                    navController.navigate(R.id.homeFragment)
+                    true
+                }
+                R.id.usageFragment -> {
+                    navController.navigate(R.id.usageFragment)
+                    true
+                }
+                R.id.campaignFragment -> {
+                    navController.navigate(R.id.campaignFragment)
+                    true
+                }
+                R.id.pointsFragment -> {
+                    navController.navigate(R.id.pointsFragment)
+                    true
+                }
+                R.id.menuFragment -> {
+                    navController.navigate(R.id.menuFragment)
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }
 

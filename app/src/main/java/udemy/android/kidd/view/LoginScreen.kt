@@ -2,6 +2,7 @@ package udemy.android.kidd.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import udemy.android.kidd.MainActivity
@@ -15,6 +16,7 @@ class LoginScreen(): AppCompatActivity() {
         btnLogin.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            Log.d("LoginScreen", "Login button clicked")
             finish()
         }
     }
