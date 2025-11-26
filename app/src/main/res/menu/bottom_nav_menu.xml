@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/nav_home"
+        android:title="ホーム"/>
+    <item
+        android:id="@+id/usageFragment"
+        android:icon="@drawable/nav_usage"
+        android:title="ご利用明細"/>
+    <item
+        android:id="@+id/campaignFragment"
+        android:icon="@drawable/nav_campaign"
+        android:title="キャンペーン"/>
+    <item
+        android:id="@+id/pointFragment"
+        android:icon="@drawable/nav_point"
+        android:title="ポイントUP"/>
+    <item
+        android:id="@+id/menuFragment"
+        android:icon="@drawable/nav_menu"
+        android:title="メニュー"/>
+</menu>

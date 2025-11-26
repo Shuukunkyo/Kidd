@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="udemy.android.kidd.view.HomeFragment"
+            android:label="ホーム"
+            tools:layout="@layout/fragment_home" />
+        <fragment
+            android:id="@+id/usageFragment"
+            android:name="udemy.android.kidd.view.UsageFragment"
+            android:label="利用明細"
+            tools:layout="@layout/fragment_usage" />
+
+        <fragment
+            android:id="@+id/campaignFragment"
+            android:name="udemy.android.kidd.view.CampaignFragment"
+            android:label="ポイント"
+            tools:layout="@layout/fragment_points" />
+
+        <fragment
+            android:id="@+id/pointsFragment"
+            android:name="udemy.android.kidd.view.PointsFragment"
+            android:label="カード"
+            tools:layout="@layout/fragment_points" />
+
+        <fragment
+            android:id="@+id/menuFragment"
+            android:name="udemy.android.kidd.view.UsageFragment"
+            android:label="設定"
+            tools:layout="@layout/fragment_menu" />
+
+</navigation>
