@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 第一层：一个看不见的、定义了总大小和边距的透明形状 -->
+    <item>
+        <shape android:shape="oval">
+            <!-- 这个尺寸决定了整个滑块 drawable 的大小 -->
+            <size android:width="24dp" android:height="24dp"/>
+            <solid android:color="@android:color/transparent"/>
+        </shape>
+    </item>
+
+    <!-- 第二层：你实际可见的白色圆形，比底层小，从而产生边距 -->
+    <item
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp"
+        android:bottom="1dp">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/white"/>
+        </shape>
+    </item>
+
+</layer-list>
