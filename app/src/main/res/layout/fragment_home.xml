@@ -10,113 +10,135 @@
         android:layout_height="match_parent"
         android:background="@color/gray_200"
         >
-        <com.google.android.material.card.MaterialCardView
-            android:background="@color/white"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            >
-            <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_view_1"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
                 >
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guide_card_1_divider"
-                    android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.40" />
+                    android:padding="10dp"
+                    >
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guide_card_1_divider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.40" />
 
+                    <ImageView
+                        android:id="@+id/img_home_points"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:src="@drawable/fragment_home_point"/>
+                    <TextView
+                        android:id="@+id/tv_home_usePoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/img_home_points"
+                        android:layout_marginLeft="20dp"
+                        android:text="利用可能ポイント"/>
+                    <TextView
+                        android:id="@+id/tv_home_point_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9,999"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/tv_home_usePoint"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_home_usePoint"/>
+                    <View
+                        android:id="@+id/view_line"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintHeight_percent="0.7"
+                        app:layout_constraintStart_toEndOf="@+id/guide_card_1_divider"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@color/black"
+                        />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/guide_card_1_divider"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:orientation="horizontal"
+                        >
 
+                        <ImageView
+                            android:id="@+id/img_home_notification"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/fragment_home_notification"
+                            />
+
+                        <ImageView
+                            android:id="@+id/img_home_QRCode"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+
+                            android:src="@drawable/fragment_home_qrcode"
+                            />
+
+                        <ImageView
+                            android:id="@+id/img_home_pay"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/fragment_home_pay"
+                            />
+
+                        <ImageView
+                            android:id="@+id/img_home_plus"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/fragment_home_plus"
+                            />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_1"
+                app:layout_constraintStart_toStartOf="@id/card_view_1"
+                app:layout_constraintEnd_toEndOf="@id/card_view_1"
+                android:backgroundTint="@color/teal_200"
+                >
                 <ImageView
-                    android:id="@+id/img_home_points"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:src="@drawable/fragment_home_point"/>
-                <TextView
-                    android:id="@+id/tv_home_usePoint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/img_home_points"
-                    android:layout_marginLeft="20dp"
-                    android:text="利用可能ポイント"/>
-                <TextView
-                    android:id="@+id/tv_home_point_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="9,999"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/tv_home_usePoint"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_home_usePoint"/>
-
-                <View
-                    android:id="@+id/view_line"
-                    android:layout_width="1dp"
-                    android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.7"
-                    app:layout_constraintStart_toEndOf="@+id/guide_card_1_divider"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:background="@color/black"
+                    android:src="@drawable/fragment_home_test"
                     />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toEndOf="@id/guide_card_1_divider"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:orientation="horizontal"
-                    >
-
-                    <ImageView
-                        android:id="@+id/img_home_notification"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/fragment_home_notification"
-                        />
-
-                    <ImageView
-                        android:id="@+id/img_home_QRCode"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-
-                        android:src="@drawable/fragment_home_qrcode"
-                        />
-
-                    <ImageView
-                        android:id="@+id/img_home_pay"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/fragment_home_pay"
-                        />
-
-                    <ImageView
-                        android:id="@+id/img_home_plus"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/fragment_home_plus"
-                        />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
 </FrameLayout>
