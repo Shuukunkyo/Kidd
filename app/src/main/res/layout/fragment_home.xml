@@ -50,6 +50,51 @@
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/tv_home_usePoint"
                     app:layout_constraintTop_toBottomOf="@+id/tv_home_usePoint"/>
+                <View
+                    android:id="@+id/view_line"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.7"
+                    app:layout_constraintStart_toEndOf="@+id/tv_home_usePoint"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/black"
+                    />
+                <ImageView
+                    android:id="@+id/img_home_notification"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/fragment_home_notification"
+                    app:layout_constraintStart_toStartOf="@id/view_line"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="16dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_home_QRCode"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/fragment_home_qrcode"
+                    app:layout_constraintStart_toEndOf="@id/img_home_notification"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="16dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_home_plus"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/fragment_home_plus"
+                    app:layout_constraintStart_toEndOf="@id/img_home_QRCode"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="16dp"
+                    />
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
     </androidx.core.widget.NestedScrollView>
