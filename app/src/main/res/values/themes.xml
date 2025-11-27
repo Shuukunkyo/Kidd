@@ -2,12 +2,12 @@
 <resources>
 
     <!-- 这个主题带有标题栏 -->
-    <style name="Theme.MyTravel.AppCompat" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.MyTravel.MaterialComponents" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- ... -->
     </style>
 
     <!-- 创建一个没有标题栏的版本 -->
-    <style name="Theme.MyTravel.AppCompat.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.MyTravel.MaterialComponents.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- ... -->
     </style>
 
