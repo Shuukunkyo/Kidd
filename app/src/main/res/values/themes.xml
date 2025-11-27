@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Kidd" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- 这个主题带有标题栏 -->
+    <style name="Theme.MyTravel.AppCompat" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- ... -->
+    </style>
+
+    <!-- 创建一个没有标题栏的版本 -->
+    <style name="Theme.MyTravel.AppCompat.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- ... -->
+    </style>
+
 </resources>

@@ -2,6 +2,7 @@ package udemy.android.kidd
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.decorView.systemUiVisibility =
+            (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    or View.SYSTEM_UI_FLAG_FULLSCREEN)
 
         // 1. 初始化 View Binding
         //    MainActivity 加载 activity_main.xml
@@ -53,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.menuFragment -> {
-                    navController.navigate(R.id.menuFragment)
+                    navController.navigate(R.id.MenuFragment)
                     true
                 }
                 else -> false

@@ -29,10 +29,9 @@
             tools:layout="@layout/fragment_points" />
 
         <fragment
-            android:id="@+id/menuFragment"
-            android:name="udemy.android.kidd.view.UsageFragment"
+            android:id="@+id/MenuFragment"
+            android:name="udemy.android.kidd.view.MenuFragment"
             android:label="設定"
-            tools:layout="@layout/fragment_menu" />
-        
+            />
 
 </navigation>
