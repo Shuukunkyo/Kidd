@@ -1,0 +1,20 @@
+<com.google.android.material.card.MaterialCardView android:id="@+id/btnChevron"
+    android:layout_width="16dp"
+    android:layout_height="16dp"
+    android:padding="2dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#F5F5F5"
+    app:strokeWidth="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/maincard_right"
+        android:padding="2dp"
+        app:tint="#444444" />
+</com.google.android.material.card.MaterialCardView>
