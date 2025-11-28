@@ -1,21 +1,15 @@
 package udemy.android.kidd
 
+// 在 MainActivity.kt 文件中
+
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.viewinterop.AndroidView
+import androidx.compose.ui.unit.size
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.NavigationUI  // 引入这个
+import udemy.android.kidd.R
 import udemy.android.kidd.databinding.ActivityMainBinding
-import udemy.android.kidd.ui.theme.KiddTheme
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,46 +17,39 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         window.decorView.systemUiVisibility =
             (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                     or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                     or View.SYSTEM_UI_FLAG_FULLSCREEN)
 
-        // 1. 初始化 View Binding
-        //    MainActivity 加载 activity_main.xml
         binding = ActivityMainBinding.inflate(layoutInflater)
-        // 设置 Activity 的内容视图
         setContentView(binding.root)
 
-        //  FragmentContainerView 设置为 NavHostFragment
+        // --- 1. 保持不变：获取 NavController ---
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_container) as NavHostFragment
         val navController = navHostFragment.navController
 
-        // BottomNavigationView 加载 bottom_nav_menu.xml
+        // --- 2. 【核心修改】使用手动设置的方式来替代 setupWithNavController ---
+        // 这是解决加载缓慢问题的关键！
         binding.bottomNavView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.homeFragment -> {
-                    navController.navigate(R.id.homeFragment)
-                    true
+            // 调用 NavigationUI.onNavDestinationSelected 来处理导航
+            // 这个方法内部有智能逻辑，会避免重新创建已经存在的 Fragment
+            NavigationUI.onNavDestinationSelected(item, navController)
+
+            // 返回 true 表示我们已经处理了这次点击事件
+            true
+        }
+
+        // （可选但推荐）监听导航变化，反过来更新 BottomNavigationView 的选中状态
+        // 这样可以处理按返回键或者深层链接导致导航变化的情况
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            val menu = binding.bottomNavView.menu
+            for (i in 0 until menu.size()) {
+                val menuItem = menu.getItem(i)
+                if (menuItem.itemId == destination.id) {
+                    menuItem.isChecked = true
+                    break
                 }
-                R.id.usageFragment -> {
-                    navController.navigate(R.id.usageFragment)
-                    true
-                }
-                R.id.campaignFragment -> {
-                    navController.navigate(R.id.campaignFragment)
-                    true
-                }
-                R.id.pointsFragment -> {
-                    navController.navigate(R.id.pointsFragment)
-                    true
-                }
-                R.id.menuFragment -> {
-                    navController.navigate(R.id.MenuFragment)
-                    true
-                }
-                else -> false
             }
         }
     }
