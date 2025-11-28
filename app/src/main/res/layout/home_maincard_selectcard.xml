@@ -9,30 +9,35 @@
 
     <!-- 默认先放 5 个圆点 -->
     <ImageView
+        android:id="@+id/selected_item_1"
         android:layout_width="8dp"
         android:layout_height="8dp"
         android:layout_margin="4dp"
         android:background="@drawable/active_dot" />
 
     <ImageView
+        android:id="@+id/selected_item_2"
         android:layout_width="8dp"
         android:layout_height="8dp"
         android:layout_margin="4dp"
         android:background="@drawable/inactive_dot" />
 
     <ImageView
+        android:id="@+id/selected_item_3"
         android:layout_width="8dp"
         android:layout_height="8dp"
         android:layout_margin="4dp"
         android:background="@drawable/inactive_dot" />
 
     <ImageView
+        android:id="@+id/selected_item_4"
         android:layout_width="8dp"
         android:layout_height="8dp"
         android:layout_margin="4dp"
         android:background="@drawable/inactive_dot" />
 
     <ImageView
+        android:id="@+id/selected_item_5"
         android:layout_width="8dp"
         android:layout_height="8dp"
         android:layout_margin="4dp"
