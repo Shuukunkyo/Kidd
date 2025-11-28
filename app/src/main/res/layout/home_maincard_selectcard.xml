@@ -1,0 +1,41 @@
+<LinearLayout android:id="@+id/dotsLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:layout_gravity="center_horizontal"
+    android:padding="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 默认先放 5 个圆点 -->
+    <ImageView
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/active_dot" />
+
+    <ImageView
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/inactive_dot" />
+
+    <ImageView
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/inactive_dot" />
+
+    <ImageView
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/inactive_dot" />
+
+    <ImageView
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/inactive_dot" />
+
+</LinearLayout>
