@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import udemy.android.kidd.network.RetrofitInstance
 import udemy.android.kidd.repository.CardRepository
+import udemy.android.kidd.repository.RepoResult
 
 /**
  * 这是一个 ViewModel，专门负责为卡片相关的 UI (比如 HomeFragment) 提供数据和处理业务逻辑。
@@ -47,29 +48,24 @@ class CardViewModel(
      * 这是获取卡片摘要信息的核心业务逻辑方法。
      * 它可以被 UI 调用（比如下拉刷新时），也可以在 init 中自动调用。
      */
-    fun fetchCardSummary(){
-        // 4. 启动一个协程 (Coroutine) 来执行异步操作。
-        // `viewModelScope` 是一个与 ViewModel 生命周期绑定的协程作用域。
-        // 当 ViewModel 被销毁时，这个作用域内的所有协程都会被自动取消，从而避免内存泄漏。
+    fun fetchCardSummary() {
         viewModelScope.launch {
-            // (A) 在开始网络请求之前，立即将状态更新为 Loading。
-            // UI 观察到这个变化后，会显示加载动画。
             _cardSummaryState.value = HomeCardSummaryState.Loading
-            try {
-                // (B) 调用 Repository 的方法来执行实际的网络请求。
-                // `suspend` 函数的调用必须在协程中。
-                val result = repository.fetchCardSummary()
 
-                // (C) 网络请求成功，将状态更新为 Success，并附带获取到的数据。
-                // UI 观察到这个变化后，会隐藏加载动画，并显示卡片数据。
-                _cardSummaryState.value = HomeCardSummaryState.Success(result)
-            } catch (e: Exception){
-                // (D) 在 try-catch 块中捕获任何可能发生的异常（如网络错误、解析错误等）。
-                // 将状态更新为 Error，并附带错误信息。
-                // UI 观察到这个变化后，会隐藏加载动画，并向用户显示错误提示。
-                _cardSummaryState.value = HomeCardSummaryState.Error(
-                    e.message ?: "Unknown Error" // 如果异常没有 message，提供一个默认的错误文本。
-                )
+            // 【修正】Repository 现在返回 Result<List<CardSummary>>
+            when (val result = repository.fetchCardSummary()) {
+                is RepoResult.Success -> {
+                    val summaryList = result.data
+                    if (summaryList.isNotEmpty()) {
+                        _cardSummaryState.value = HomeCardSummaryState.Success(summaryList)
+                    }else{
+                        _cardSummaryState.value = HomeCardSummaryState.Error("カード情報が取得できませんでした。")
+                    }
+                }
+                is RepoResult.Failure -> {
+                    val errorMessage = result.message ?: "不明なエラー"
+                    _cardSummaryState.value = HomeCardSummaryState.Error(errorMessage)
+                }
             }
         }
     }
