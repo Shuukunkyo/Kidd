@@ -44,6 +44,25 @@ android {
 
 dependencies {
 
+    // ... 之前的依赖 (例如: 基础, Navigation, Compose)
+
+// 【新增】MVVM - Networking (Retrofit/OkHttp)
+// 用于发起网络请求
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+// Retrofit 的 Moshi 转换器 (日本项目常用 Moshi/Gson 来处理 JSON 序列化)
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+// Moshi 核心库
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
+// OkHttp 拦截器，用于日志打印/调试
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+
+// 【新增】MVVM - Coroutines (协程)
+// 用于在 ViewModel 中安全地启动协程
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0")
+// 用于将 LiveData 转换为 Flow 或在 Lifecycle-aware 的 Scope 中启动协程
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.0") // 确认版本，您代码中已有这个，确保是最新版本或您想用的版本
+
 
         // 基础
     implementation ("androidx.core:core-ktx:1.12.0")
