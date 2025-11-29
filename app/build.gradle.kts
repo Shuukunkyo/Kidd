@@ -47,6 +47,11 @@ dependencies {
     // ... 之前的依赖 (例如: 基础, Navigation, Compose)
 
 
+    testImplementation("app.cash.turbine:turbine:1.0.0")
+    testImplementation("org.mockito:mockito-core:5.5.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
 // 【新增】MVVM - Networking (Retrofit/OkHttp)
@@ -106,4 +111,5 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    testImplementation(kotlin("test"))
 }
