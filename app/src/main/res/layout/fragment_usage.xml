@@ -123,15 +123,14 @@
 
 <!--            jetpack 画面1-->
             <androidx.compose.ui.platform.ComposeView
+                android:id="@+id/testView"
+                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/usage_card_view_1"
                 android:layout_marginTop="16dp"/>
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

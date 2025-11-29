@@ -22,6 +22,9 @@ class UsageFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // 在这里进行所有 View 的初始化和事件绑定
+        binding.testView.setContent {
+            UsageTitle()
+        }
     }
 
     override fun onDestroy() {
