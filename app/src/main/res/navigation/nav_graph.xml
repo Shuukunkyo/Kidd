@@ -12,7 +12,7 @@
             tools:layout="@layout/fragment_home" />
         <fragment
             android:id="@+id/usageFragment"
-            android:name="udemy.android.kidd.view.UsageFragment"
+            android:name="udemy.android.kidd.view.usage.UsageFragment"
             android:label="利用明細"
             tools:layout="@layout/fragment_usage" />
 

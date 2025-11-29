@@ -1,12 +1,10 @@
-package udemy.android.kidd.view
+package udemy.android.kidd.view.usage
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import udemy.android.kidd.R
-import udemy.android.kidd.databinding.FragmentHomeBinding
 import udemy.android.kidd.databinding.FragmentUsageBinding
 
 class UsageFragment: Fragment() {
