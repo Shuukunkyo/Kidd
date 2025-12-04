@@ -1,12 +1,10 @@
-package udemy.android.kidd.view
+package udemy.android.kidd.view.usage
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import udemy.android.kidd.R
-import udemy.android.kidd.databinding.FragmentHomeBinding
 import udemy.android.kidd.databinding.FragmentUsageBinding
 
 class UsageFragment: Fragment() {
@@ -24,6 +22,9 @@ class UsageFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // 在这里进行所有 View 的初始化和事件绑定
+        binding.testView.setContent {
+            UsageTitle()
+        }
     }
 
     override fun onDestroy() {
